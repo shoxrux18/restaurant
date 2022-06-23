@@ -1,0 +1,53 @@
+8cb01e3a85f5eb021cbf637debac2cb0fc10aed1 admin 1
+
+KalitSuzlar             Kategoriyalar:                  
+1 yangi                 1 Apple                         
+2 eski                  2 Samsung
+3 3d                    3 Me
+4 2d                    4 Eski telefonlar
+5 faceid                5 Nokia
+
+1. Yangi telefon qo'shish (kamida 2 ta kalit so'z, va har kim o'zining kategoriyasiga)
+2. Qo'shilgan telefonni tahrirlash (eski kalit so'zlardan bittasini o'chirib boshqasini qo'shish, 
+    nomini o'zgartirish)
+3. Mavjud barcha telefonlar ro'yxati va qaysi kategoriyadaligi bilan birga
+4. Xohlagan ikkita kategoriyaga tegishli telefonlar ro'yxati
+5. Nomida A harfi qatnashgan telefonlar ro'yxati
+6. Telefon ID si 2 va 5 oralig'ida bo'lgan telefonlar ro'yxati ID bo'yicha teskariga saralab
+7. Kategoriya ID lari 2 va 4 oralig'idagi barcha telefonlar ro'yxati TELEFON ID si bo'yicha 
+    teskariga saralab
+8. Kategoriya ID lari 2 va 4 oralig'idagi barcha telefonlar ro'yxati 
+    Kategoriya ID si bo'yicha teskariga saralab
+9. Kategorya ID si 3 dan katta yoki teng bo'lgan barcha telefonlar ro'yxati (har gal tasodif saralab
+    order_by('?'))
+10. Kategoriya nomida A harfi qatnashgan telefonlar ro'yxati kategoriyasi bilan birga
+11. Xohlagan ID=3 kalit so'zga tegishli telefonlar ro'yxati
+12. Xohlagan ID=1 va 4 kalit so'zlariga tegishli telefonlar ro'yxati
+13. Nomi A dan boshlangan yoki A bilan tugagan kategoriyaga tegishli telefonlar ro'yxati nomi 
+    bo'yicha saralab (Q sinfi ishlatiladi OR operatori yordamida)
+14. ID=2 dan tashqari bo'lgan kategoriyaga tegishli telefonlar ro'yxati nomi bo'yicha teskari saralab
+15. Telefon nomida A harfi bo'lgan lekin P harfi bo'lmagan telefonlar ro'yxatini chiqaring.
+
+
+0. Telegramdan ro'yxatni olasizlar
+0-1. Telegramdan models.py va mashq.py ni ko'chirib olish
+1. Wifi-u4-21 ga ulanish
+2. ping 192.168.12.1
+    Natija: 64 bytes from 192.168.12.1: icmp_seq=1 ttl=64 time=0.094 ms
+2-1. To'xtatish uchun CTRL+C
+3. dbmashq nomil proyekt yaratamiz
+4. main nomli app yaratamiz
+5. main ichida management nomli papka yaratamiz
+6. main/management ichida commands nomli papka yaratamiz
+7. models.py ni o'zgartiramiz
+8. main/management/commands ichiga mashq.py ni ko'chiramiz
+8-1. settings.py da:
+    HOST: "192.168.12.1"
+    NAME: "dbmashq"
+    USER: "remote"
+    PASSWORD: "Qwerty123$";
+9. Terminalda (env faol qilgan holda) ./manage.py mashq
+
+Agar nimadirlar ro'yxati chiqsa demak ishladi.
+
+10. Mashqlarni boshlaymiz ))
