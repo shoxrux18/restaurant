@@ -1,0 +1,41 @@
+version: '3.5'
+
+services:
+  web: 
+    build: restaurant 
+    ports: 
+      - '8000:8000'
+  db:
+    image: mysql:5.7.38
+    volumes:
+      - database_volume:/var/lib/mysql/data
+    depends_on:
+      -web
+    networks:
+      - database_network
+    environment:      
+      MYSQL_ROOT_PASSWORD: Qwerty123$
+
+  
+
+  nginx:
+    image: nginx:1.21.4-alpine
+    ports:      
+      - "80:80"
+    depends_on:      
+      - web
+    volumes:      
+      - static_files_volume:/usr/share/nginx/html/static      
+    environment:
+      - NGINX_ENVSUBST_TEMPLATE_SUFFIX=.conf
+      - PROD_HOST_NAME
+
+  
+
+volumes:
+  static_files_volume:
+  database_volume:
+
+networks:  
+  database_network:
+  
