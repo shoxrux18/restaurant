@@ -4,7 +4,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 
-i18n
+@i18n
 class Restaurant(models.Model):
     STATUS_CLOSE =0
     STATUS_OPEN = 1
